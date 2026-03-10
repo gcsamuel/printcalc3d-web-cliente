@@ -1,0 +1,12 @@
+
+{% extends "pedidos/base.html" %}
+{% block title %}Pedido enviado{% endblock %}
+{% block content %}
+<section class="card success">
+    <h2>Pedido enviado com sucesso</h2>
+    <p>Seu protocolo é:</p>
+    <div class="protocolo">{{ pedido.protocolo }}</div>
+    <p>Guarde esse código para acompanhar o andamento do pedido.</p>
+    <a href="/acompanhar/?protocolo={{ pedido.protocolo }}" class="btn">Acompanhar pedido</a>
+</section>
+{% endblock %}

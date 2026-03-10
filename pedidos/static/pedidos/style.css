@@ -1,0 +1,107 @@
+
+:root{
+  --bg:#0b1220;
+  --card:#0f172a;
+  --card2:#111827;
+  --text:#f9fafb;
+  --muted:#94a3b8;
+  --primary:#3b82f6;
+  --border:#334155;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+.container{
+  width:min(1100px,92%);
+  margin:0 auto;
+}
+.topbar{
+  background:var(--card);
+  border-bottom:1px solid var(--border);
+}
+.topbar-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 0;
+}
+.topbar h1{margin:0;font-size:24px}
+.topbar p{margin:4px 0 0;color:var(--muted)}
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  margin-left:18px;
+}
+.hero{padding:30px 0 10px}
+.hero h2{margin-bottom:8px}
+.hero p{color:var(--muted)}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px;
+  margin:18px 0;
+}
+.form-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+.field.full{grid-column:1 / -1}
+label{
+  display:block;
+  margin-bottom:6px;
+  font-weight:700;
+}
+input,select,textarea{
+  width:100%;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:var(--card2);
+  color:var(--text);
+}
+.btn{
+  display:inline-block;
+  background:var(--primary);
+  color:white;
+  border:none;
+  padding:12px 18px;
+  border-radius:12px;
+  text-decoration:none;
+  cursor:pointer;
+}
+.success{text-align:center}
+.protocolo{
+  font-size:30px;
+  font-weight:700;
+  letter-spacing:2px;
+  margin:16px 0;
+}
+.track-form{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:12px;
+  align-items:end;
+}
+.status-box{
+  padding:14px;
+  border-radius:12px;
+  background:var(--card2);
+  margin:14px 0;
+}
+.grid-two{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+.alert,.error{color:#fca5a5}
+@media (max-width:700px){
+  .form-grid,.grid-two,.track-form{grid-template-columns:1fr}
+  .topbar-inner{flex-direction:column;gap:12px;align-items:flex-start}
+  nav a{margin-left:0;margin-right:16px}
+}

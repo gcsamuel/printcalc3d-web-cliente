@@ -1,0 +1,27 @@
+
+{% extends "pedidos/base.html" %}
+{% block title %}Novo pedido{% endblock %}
+{% block content %}
+<section class="hero">
+    <h2>Solicite sua peça impressa em 3D</h2>
+    <p>Preencha o formulário abaixo, envie seu arquivo se tiver, e depois acompanhe pelo protocolo.</p>
+</section>
+
+<section class="card">
+    <form method="post" enctype="multipart/form-data" class="form-grid">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="field {% if field.name == 'descricao' %}full{% endif %}">
+                <label>{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                    <div class="error">{{ field.errors|striptags }}</div>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <div class="full">
+            <button type="submit" class="btn">Enviar pedido</button>
+        </div>
+    </form>
+</section>
+{% endblock %}
